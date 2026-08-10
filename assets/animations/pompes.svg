@@ -1,0 +1,52 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation pompes">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    .pose-haut { animation: fondu-haut 1.8s ease-in-out infinite; }
+    .pose-bas { animation: fondu-bas 1.8s ease-in-out infinite; }
+
+    @keyframes fondu-haut {
+      0%, 35%   { opacity: 1; }
+      50%, 85%  { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+    @keyframes fondu-bas {
+      0%, 35%   { opacity: 0; }
+      50%, 85%  { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+  </style>
+
+  <line class="sol" x1="40" y1="330" x2="360" y2="330" />
+
+  <!-- Points de contact au sol, fixes -->
+  <circle cx="100" cy="330" r="14" class="articulation" />
+  <circle cx="330" cy="330" r="14" class="articulation" />
+
+  <!-- Pose haute : bras tendus -->
+  <g class="pose-haut">
+    <line class="trait" x1="230" y1="192" x2="330" y2="330" />
+    <line class="trait" x1="115" y1="175" x2="230" y2="192" />
+    <line class="trait" x1="115" y1="175" x2="102" y2="250" />
+    <line class="trait" x1="102" y1="250" x2="100" y2="330" />
+    <circle class="articulation" cx="115" cy="175" r="11" />
+    <circle class="articulation" cx="102" cy="250" r="11" />
+    <circle class="articulation" cx="230" cy="192" r="11" />
+    <circle class="tete" cx="97" cy="140" r="32" />
+  </g>
+
+  <!-- Pose basse : coudes fléchis, poitrine proche du sol -->
+  <g class="pose-bas">
+    <line class="trait" x1="245" y1="225" x2="330" y2="330" />
+    <line class="trait" x1="130" y1="235" x2="245" y2="225" />
+    <line class="trait" x1="130" y1="235" x2="90" y2="272" />
+    <line class="trait" x1="90" y1="272" x2="100" y2="330" />
+    <circle class="articulation" cx="130" cy="235" r="11" />
+    <circle class="articulation" cx="90" cy="272" r="11" />
+    <circle class="articulation" cx="245" cy="225" r="11" />
+    <circle class="tete" cx="115" cy="205" r="32" />
+  </g>
+</svg>
