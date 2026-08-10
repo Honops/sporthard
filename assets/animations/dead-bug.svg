@@ -1,0 +1,68 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation dead bug">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    .pose-repli { animation: fondu-repli 2s ease-in-out infinite; }
+    .pose-extension { animation: fondu-extension 2s ease-in-out infinite; }
+
+    @keyframes fondu-repli {
+      0%, 30%   { opacity: 1; }
+      50%, 80%  { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+    @keyframes fondu-extension {
+      0%, 30%   { opacity: 0; }
+      50%, 80%  { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <!-- Tête, torse, et côté fixe (bras + jambe repliés en permanence) -->
+  <circle class="tete" cx="70" cy="220" r="30" />
+  <line class="trait" x1="98" y1="222" x2="240" y2="235" />
+
+  <line class="trait" x1="130" y1="220" x2="140" y2="160" />
+  <line class="trait" x1="140" y1="160" x2="118" y2="115" />
+  <circle class="articulation" cx="140" cy="160" r="10" />
+  <circle class="articulation" cx="118" cy="115" r="10" />
+
+  <line class="trait" x1="250" y1="240" x2="228" y2="180" />
+  <line class="trait" x1="228" y1="180" x2="198" y2="160" />
+  <circle class="articulation" cx="228" cy="180" r="10" />
+  <circle class="articulation" cx="198" cy="160" r="10" />
+
+  <!-- Points d'ancrage épaule/hanche du côté animé : identiques dans les deux poses -->
+  <circle class="articulation" cx="160" cy="215" r="11" />
+  <circle class="articulation" cx="260" cy="245" r="12" />
+
+  <!-- Pose repliée (position de départ, "table") -->
+  <g class="pose-repli">
+    <line class="trait" x1="160" y1="215" x2="175" y2="155" />
+    <line class="trait" x1="175" y1="155" x2="160" y2="110" />
+    <circle class="articulation" cx="175" cy="155" r="10" />
+    <circle class="articulation" cx="160" cy="110" r="10" />
+
+    <line class="trait" x1="260" y1="245" x2="255" y2="180" />
+    <line class="trait" x1="255" y1="180" x2="225" y2="165" />
+    <circle class="articulation" cx="255" cy="180" r="10" />
+    <circle class="articulation" cx="225" cy="165" r="10" />
+  </g>
+
+  <!-- Pose étendue (bras et jambe opposés tendus, proches du sol) -->
+  <g class="pose-extension">
+    <line class="trait" x1="160" y1="215" x2="120" y2="175" />
+    <line class="trait" x1="120" y1="175" x2="75" y2="150" />
+    <circle class="articulation" cx="120" cy="175" r="10" />
+    <circle class="articulation" cx="75" cy="150" r="10" />
+
+    <line class="trait" x1="260" y1="245" x2="330" y2="275" />
+    <line class="trait" x1="330" y1="275" x2="385" y2="290" />
+    <circle class="articulation" cx="330" cy="275" r="10" />
+    <circle class="articulation" cx="385" cy="290" r="10" />
+  </g>
+</svg>
