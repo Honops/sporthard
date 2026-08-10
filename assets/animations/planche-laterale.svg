@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation planche latérale">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    .corps-statique { animation: respiration 2.6s ease-in-out infinite; }
+
+    @keyframes respiration {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.82; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <g class="corps-statique">
+    <!-- Appui unique sur un avant-bras, corps de profil, aligné en diagonale -->
+    <line class="trait" x1="150" y1="330" x2="145" y2="260" />
+    <line class="trait" x1="145" y1="260" x2="230" y2="200" />
+    <line class="trait" x1="230" y1="200" x2="300" y2="145" />
+
+    <!-- bras d'appui au sol -->
+    <line class="trait" x1="145" y1="260" x2="115" y2="325" />
+
+    <!-- bras du dessus, levé vers le plafond -->
+    <line class="trait" x1="230" y1="200" x2="255" y2="130" />
+
+    <!-- jambe du dessous et du dessus, légèrement décalées -->
+    <line class="trait" x1="150" y1="330" x2="80" y2="335" />
+    <line class="trait" x1="150" y1="330" x2="95" y2="300" />
+
+    <circle class="tete" cx="325" cy="120" r="30" />
+    <circle class="articulation" cx="145" cy="260" r="11" />
+    <circle class="articulation" cx="230" cy="200" r="11" />
+    <circle class="articulation" cx="115" cy="325" r="10" />
+    <circle class="articulation" cx="255" cy="130" r="10" />
+    <circle class="articulation" cx="150" cy="330" r="12" />
+    <circle class="articulation" cx="80" cy="335" r="10" />
+    <circle class="articulation" cx="95" cy="300" r="10" />
+  </g>
+</svg>
