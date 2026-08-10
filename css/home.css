@@ -1,0 +1,89 @@
+/* ============================================
+   HonoPs — Styles page d'accueil
+   ============================================ */
+
+.accueil {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accueil-fond {
+  position: absolute;
+  inset: 0;
+  background-color: var(--couleur-fond);
+  background-image: url("../assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* .overlay-sombre est défini dans base.css et réutilisé tel quel ici */
+
+.accueil-contenu {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espace-md);
+  padding: var(--espace-lg) var(--espace-md);
+  text-align: center;
+}
+
+.logo-honops {
+  font-family: var(--font-logo);
+  font-size: var(--taille-logo);
+  font-weight: 700;
+  color: var(--couleur-texte);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.accueil-souslogo {
+  font-family: var(--font-texte);
+  font-size: var(--taille-texte);
+  color: var(--couleur-texte-att);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bouton-cta {
+  margin-top: var(--espace-md);
+  padding: 1rem 2.5rem;
+  min-height: var(--taille-tactile-min);
+  background-color: var(--couleur-accent);
+  color: #1a1305;
+  font-family: var(--font-texte);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--ombre-md);
+  transition: transform var(--transition-rapide), box-shadow var(--transition-rapide);
+}
+
+.bouton-cta:active {
+  transform: scale(0.96);
+}
+
+.bouton-son {
+  position: absolute;
+  z-index: 3;
+  top: var(--espace-md);
+  right: var(--espace-md);
+  font-size: 1.4rem;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.bouton-son[data-actif="false"] {
+  opacity: 0.5;
+}
