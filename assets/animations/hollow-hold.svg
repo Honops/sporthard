@@ -1,0 +1,39 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation hollow hold">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+    .repere-dos { stroke: rgba(212,162,76,0.35); stroke-width: 6; }
+
+    .corps-statique { animation: respiration 2.6s ease-in-out infinite; }
+
+    @keyframes respiration {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.82; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+  <!-- Repère : bas du dos plaqué au sol -->
+  <line class="repere-dos" x1="150" y1="330" x2="250" y2="330" />
+
+  <g class="corps-statique">
+    <!-- Bas du dos : seul point réellement au contact du sol -->
+    <circle class="articulation" cx="200" cy="320" r="12" />
+
+    <!-- Buste et tête décollés, inclinés vers le haut -->
+    <line class="trait" x1="200" y1="320" x2="150" y2="260" />
+    <circle class="tete" cx="122" cy="228" r="30" />
+
+    <!-- Bras tendus vers l'arrière, légèrement décollés -->
+    <line class="trait" x1="150" y1="260" x2="80" y2="245" />
+    <circle class="articulation" cx="80" cy="245" r="10" />
+
+    <!-- Jambes tendues, décollées, formant la "banane" -->
+    <line class="trait" x1="200" y1="320" x2="290" y2="290" />
+    <line class="trait" x1="290" y1="290" x2="365" y2="255" />
+    <circle class="articulation" cx="290" cy="290" r="11" />
+    <circle class="articulation" cx="365" cy="255" r="10" />
+  </g>
+</svg>
