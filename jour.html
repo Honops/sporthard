@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>HonoPs — Détail du jour</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/jour.css">
+</head>
+<body>
+  <div class="page-jour">
+    <header class="entete-jour">
+      <a href="index.html" class="bouton-tactile bouton-home" aria-label="Retour à l'accueil">🏠</a>
+    </header>
+
+    <!-- Contenu normal : affiché si le jour de l'URL est valide -->
+    <div id="contenu-jour" class="contenu-jour masque">
+      <h1 class="titre-jour" id="titre-jour"></h1>
+      <p class="sous-titre-jour" id="sous-titre-jour"></p>
+
+      <ul class="liste-exercices" id="liste-exercices"></ul>
+
+      <button id="bouton-commencer" class="bouton-cta bouton-commencer" type="button">
+        Commencer
+      </button>
+    </div>
+
+    <!-- État erreur : affiché si le paramètre jour est absent/invalide -->
+    <div id="etat-erreur" class="etat-erreur masque">
+      <p class="etat-erreur-titre">Ce jour n'existe pas.</p>
+      <a href="jours.html" class="bouton-cta">Retour au programme</a>
+    </div>
+  </div>
+
+  <!-- Modale de confirmation : séance déjà en cours -->
+  <div id="modale-conflit" class="modale masque">
+    <div class="modale-contenu">
+      <p class="modale-titre">Une séance est déjà en cours.</p>
+      <p class="modale-detail" id="modale-detail"></p>
+      <div class="modale-boutons">
+        <button id="bouton-reprendre" class="bouton-modale bouton-modale-secondaire" type="button">
+          ▶ Reprendre
+        </button>
+        <button id="bouton-abandonner" class="bouton-modale bouton-modale-danger" type="button">
+          Abandonner et commencer cette séance
+        </button>
+      </div>
+      <button id="bouton-annuler-modale" class="bouton-modale-annuler" type="button">
+        Annuler
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="js/pages/jour.js"></script>
+</body>
+</html>
