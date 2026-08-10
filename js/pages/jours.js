@@ -48,15 +48,23 @@ function creerCarteJour(jour) {
   nom.textContent = NOMS_JOURS[jour];
   infos.appendChild(nom);
 
-  const detailSeance = document.createElement("span");
-  detailSeance.className = "carte-jour-seance";
   if (estRepos) {
-    detailSeance.textContent = "Repos";
+    const badgeRepos = document.createElement("span");
+    badgeRepos.className = "carte-jour-badge-repos";
+    badgeRepos.textContent = "😴 REPOS";
+    infos.appendChild(badgeRepos);
+
+    const detailRepos = document.createElement("span");
+    detailRepos.className = "carte-jour-seance";
+    detailRepos.textContent = "Récupération";
+    infos.appendChild(detailRepos);
   } else {
+    const detailSeance = document.createElement("span");
+    detailSeance.className = "carte-jour-seance";
     const seance = SEANCES[seanceKey];
     detailSeance.textContent = `${seance.nomSeance} · ${seance.exercices.length} exercices`;
+    infos.appendChild(detailSeance);
   }
-  infos.appendChild(detailSeance);
 
   carte.appendChild(infos);
 
