@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>HonoPs — Séance</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/seance.css">
+</head>
+<body id="corps-seance">
+
+  <button
+    id="bouton-home"
+    class="bouton-tactile bouton-home-seance"
+    aria-label="Retour à l'accueil"
+    type="button"
+  >🏠</button>
+
+  <main class="ecran-seance">
+
+    <!-- Séance sauvegardée détectée : confirmation obligatoire -->
+    <section id="vue-conflit" class="vue vue-conflit masque">
+      <p class="conflit-titre">Séance en cours</p>
+      <p class="conflit-detail" id="conflit-detail"></p>
+      <div class="conflit-boutons">
+        <button id="bouton-conflit-reprendre" class="bouton-cta" type="button">▶ Reprendre</button>
+        <button id="bouton-conflit-abandonner" class="bouton-danger" type="button">Abandonner et commencer cette séance</button>
+      </div>
+    </section>
+
+    <!-- Jour invalide dans l'URL -->
+    <section id="vue-erreur" class="vue vue-erreur masque">
+      <p class="erreur-titre">Ce jour n'existe pas ou n'a pas de séance.</p>
+      <a href="jours.html" class="bouton-cta">Retour au programme</a>
+    </section>
+
+    <!-- Exercice actif -->
+    <section id="vue-exercice" class="vue vue-exercice masque">
+      <div class="barre-progression">
+        <div class="barre-progression-remplissage" id="barre-progression"></div>
+      </div>
+
+      <div class="entete-seance">
+        <span id="compteur-position">0 / 0</span>
+        <span id="compteur-effectues">0 effectués</span>
+      </div>
+
+      <h1 class="nom-exercice" id="nom-exercice"></h1>
+
+      <div class="zone-animation" id="zone-animation">
+        <img id="image-animation" alt="" class="masque">
+        <span id="placeholder-animation" class="placeholder-animation">🎬 Animation à venir</span>
+      </div>
+
+      <div id="bloc-repetitions" class="bloc-valeur masque">
+        <p class="valeur-geante" id="valeur-repetitions"></p>
+        <p class="label-valeur">RÉPÉTITIONS</p>
+        <button id="bouton-termine" class="bouton-cta bouton-termine" type="button">✓ TERMINÉ</button>
+      </div>
+
+      <div id="bloc-temps" class="bloc-valeur masque">
+        <p class="valeur-geante" id="valeur-temps"></p>
+      </div>
+
+      <div class="navigation-exercice">
+        <button id="fleche-precedent" class="bouton-fleche" type="button" aria-label="Exercice précédent">◀</button>
+        <button id="fleche-suivant" class="bouton-fleche" type="button" aria-label="Exercice suivant">▶</button>
+      </div>
+    </section>
+
+    <!-- Repos -->
+    <section id="vue-repos" class="vue vue-repos masque">
+      <p class="repos-titre">REPOS</p>
+      <p class="repos-chrono" id="repos-chrono"></p>
+
+      <div class="repos-prochain">
+        <p class="repos-prochain-label">PROCHAIN EXERCICE</p>
+        <p class="repos-prochain-nom" id="repos-prochain-nom"></p>
+      </div>
+
+      <div class="navigation-exercice">
+        <button id="fleche-precedent-repos" class="bouton-fleche" type="button" aria-label="Exercice précédent">◀</button>
+        <button id="fleche-suivant-repos" class="bouton-fleche" type="button" aria-label="Exercice suivant">▶</button>
+      </div>
+    </section>
+
+    <!-- Séance terminée -->
+    <section id="vue-terminee" class="vue vue-terminee masque">
+      <p class="terminee-titre">Séance terminée 🎉</p>
+      <p class="terminee-detail" id="terminee-detail"></p>
+      <a href="jours.html" class="bouton-cta">Retour au programme</a>
+    </section>
+
+  </main>
+
+  <!-- Modale : quitter la séance -->
+  <div id="modale-quitter" class="modale masque">
+    <div class="modale-contenu">
+      <p class="modale-titre">Quitter la séance ?</p>
+      <div class="modale-boutons">
+        <button id="bouton-quitter-continuer" class="bouton-modale bouton-modale-secondaire" type="button">Continuer</button>
+        <button id="bouton-quitter-confirmer" class="bouton-modale bouton-modale-danger" type="button">Quitter</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/pages/seance.js"></script>
+</body>
+</html>
