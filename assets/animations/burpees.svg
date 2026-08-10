@@ -1,0 +1,93 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation burpees">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    /* 4 poses en crossfade séquentiel : debout → planche → accroupi → saut */
+    .pose-1 { animation: f1 3.2s ease-in-out infinite; }
+    .pose-2 { animation: f2 3.2s ease-in-out infinite; }
+    .pose-3 { animation: f3 3.2s ease-in-out infinite; }
+    .pose-4 { animation: f4 3.2s ease-in-out infinite; }
+
+    @keyframes f1 {
+      0%, 18%   { opacity: 1; }
+      25%, 95%  { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+    @keyframes f2 {
+      0%, 18%   { opacity: 0; }
+      25%, 43%  { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes f3 {
+      0%, 43%   { opacity: 0; }
+      50%, 68%  { opacity: 1; }
+      75%, 100% { opacity: 0; }
+    }
+    @keyframes f4 {
+      0%, 68%   { opacity: 0; }
+      75%, 93%  { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <!-- Pose 1 : debout -->
+  <g class="pose-1">
+    <circle class="tete" cx="200" cy="105" r="30" />
+    <line class="trait" x1="200" y1="132" x2="200" y2="240" />
+    <line class="trait" x1="200" y1="240" x2="185" y2="330" />
+    <line class="trait" x1="200" y1="240" x2="215" y2="330" />
+    <line class="trait" x1="200" y1="170" x2="160" y2="220" />
+    <line class="trait" x1="200" y1="170" x2="240" y2="220" />
+    <circle class="articulation" cx="200" cy="240" r="11" />
+    <circle class="articulation" cx="185" cy="330" r="11" />
+    <circle class="articulation" cx="215" cy="330" r="11" />
+    <circle class="articulation" cx="160" cy="220" r="9" />
+    <circle class="articulation" cx="240" cy="220" r="9" />
+  </g>
+
+  <!-- Pose 2 : descente, mains au sol, jambes encore repliées -->
+  <g class="pose-2">
+    <circle class="tete" cx="130" cy="235" r="30" />
+    <line class="trait" x1="155" y1="255" x2="230" y2="290" />
+    <line class="trait" x1="155" y1="255" x2="120" y2="325" />
+    <line class="trait" x1="230" y1="290" x2="260" y2="245" />
+    <line class="trait" x1="230" y1="290" x2="255" y2="330" />
+    <circle class="articulation" cx="155" cy="255" r="11" />
+    <circle class="articulation" cx="230" cy="290" r="11" />
+    <circle class="articulation" cx="120" cy="325" r="10" />
+    <circle class="articulation" cx="260" cy="245" r="10" />
+    <circle class="articulation" cx="255" cy="330" r="10" />
+  </g>
+
+  <!-- Pose 3 : planche, jambes tendues en arrière -->
+  <g class="pose-3">
+    <circle class="tete" cx="70" cy="228" r="30" />
+    <line class="trait" x1="95" y1="240" x2="320" y2="255" />
+    <line class="trait" x1="320" y1="255" x2="350" y2="330" />
+    <line class="trait" x1="95" y1="240" x2="90" y2="325" />
+    <circle class="articulation" cx="95" cy="240" r="11" />
+    <circle class="articulation" cx="320" cy="255" r="11" />
+    <circle class="articulation" cx="350" cy="330" r="11" />
+    <circle class="articulation" cx="90" cy="325" r="10" />
+  </g>
+
+  <!-- Pose 4 : saut, bras levés, pieds décollés du sol -->
+  <g class="pose-4">
+    <circle class="tete" cx="200" cy="85" r="30" />
+    <line class="trait" x1="200" y1="112" x2="200" y2="220" />
+    <line class="trait" x1="200" y1="220" x2="175" y2="300" />
+    <line class="trait" x1="200" y1="220" x2="225" y2="300" />
+    <line class="trait" x1="200" y1="140" x2="145" y2="80" />
+    <line class="trait" x1="200" y1="140" x2="255" y2="80" />
+    <circle class="articulation" cx="200" cy="220" r="11" />
+    <circle class="articulation" cx="175" cy="300" r="10" />
+    <circle class="articulation" cx="225" cy="300" r="10" />
+    <circle class="articulation" cx="145" cy="80" r="9" />
+    <circle class="articulation" cx="255" cy="80" r="9" />
+  </g>
+</svg>
