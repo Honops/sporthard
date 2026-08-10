@@ -1,1 +1,31 @@
-index.html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>HonoPs</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <main class="accueil">
+    <div class="accueil-fond" style="background-image: url('assets/images/background.jpg');"></div>
+    <div class="overlay-sombre"></div>
+
+    <button
+      id="bouton-son"
+      class="bouton-tactile bouton-son"
+      aria-label="Activer ou désactiver le son"
+      type="button"
+    >🔊</button>
+
+    <div class="accueil-contenu">
+      <h1 class="logo-honops">HonoPs</h1>
+      <p class="accueil-souslogo">Ton entraînement. Sans réfléchir.</p>
+      <a href="jours.html" id="lien-commencer" class="bouton-cta">Commencer</a>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/accueil.js"></script>
+</body>
+</html>
