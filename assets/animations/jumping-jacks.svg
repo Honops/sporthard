@@ -1,0 +1,54 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation jumping jacks">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    .pose-fermee { animation: fondu-fermee 1.3s ease-in-out infinite; }
+    .pose-ouverte { animation: fondu-ouverte 1.3s ease-in-out infinite; }
+
+    @keyframes fondu-fermee {
+      0%, 30%   { opacity: 1; }
+      50%, 80%  { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+    @keyframes fondu-ouverte {
+      0%, 30%   { opacity: 0; }
+      50%, 80%  { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <!-- Point d'ancrage commun : centre du bassin -->
+  <circle class="articulation" cx="200" cy="230" r="12" />
+  <line class="trait" x1="200" y1="230" x2="200" y2="150" />
+
+  <!-- Pose fermée : pieds joints, bras le long du corps -->
+  <g class="pose-fermee">
+    <circle class="tete" cx="200" cy="115" r="30" />
+    <line class="trait" x1="200" y1="230" x2="190" y2="330" />
+    <line class="trait" x1="200" y1="230" x2="210" y2="330" />
+    <line class="trait" x1="200" y1="150" x2="165" y2="240" />
+    <line class="trait" x1="200" y1="150" x2="235" y2="240" />
+    <circle class="articulation" cx="190" cy="330" r="10" />
+    <circle class="articulation" cx="210" cy="330" r="10" />
+    <circle class="articulation" cx="165" cy="240" r="9" />
+    <circle class="articulation" cx="235" cy="240" r="9" />
+  </g>
+
+  <!-- Pose ouverte : jambes écartées, bras levés au-dessus de la tête -->
+  <g class="pose-ouverte">
+    <circle class="tete" cx="200" cy="115" r="30" />
+    <line class="trait" x1="200" y1="230" x2="130" y2="330" />
+    <line class="trait" x1="200" y1="230" x2="270" y2="330" />
+    <line class="trait" x1="200" y1="150" x2="130" y2="90" />
+    <line class="trait" x1="200" y1="150" x2="270" y2="90" />
+    <circle class="articulation" cx="130" cy="330" r="10" />
+    <circle class="articulation" cx="270" cy="330" r="10" />
+    <circle class="articulation" cx="130" cy="90" r="9" />
+    <circle class="articulation" cx="270" cy="90" r="9" />
+  </g>
+</svg>
