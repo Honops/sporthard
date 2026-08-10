@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation planche">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    /* Exercice statique : pas de changement de pose, seulement
+       une très légère respiration pour indiquer un maintien actif. */
+    .corps-statique { animation: respiration 2.6s ease-in-out infinite; transform-origin: 220px 240px; }
+
+    @keyframes respiration {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.82; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <g class="corps-statique">
+    <!-- Ligne corporelle parfaitement droite : avant-bras au sol jusqu'aux pieds -->
+    <line class="trait" x1="105" y1="240" x2="330" y2="255" />
+    <line class="trait" x1="330" y1="255" x2="355" y2="330" />
+    <line class="trait" x1="105" y1="240" x2="95" y2="330" />
+
+    <circle class="tete" cx="80" cy="228" r="30" />
+    <circle class="articulation" cx="105" cy="240" r="11" />
+    <circle class="articulation" cx="330" cy="255" r="11" />
+    <circle class="articulation" cx="95" cy="330" r="12" />
+    <circle class="articulation" cx="355" cy="330" r="12" />
+  </g>
+</svg>
