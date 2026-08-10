@@ -1,0 +1,48 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation reverse crunch">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    .pose-bas { animation: fondu-bas 1.7s ease-in-out infinite; }
+    .pose-haut { animation: fondu-haut 1.7s ease-in-out infinite; }
+
+    @keyframes fondu-bas {
+      0%, 30%   { opacity: 1; }
+      50%, 80%  { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+    @keyframes fondu-haut {
+      0%, 30%   { opacity: 0; }
+      50%, 80%  { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <!-- Buste, tête et bras : fixes, le dos reste au sol -->
+  <line class="trait" x1="240" y1="255" x2="90" y2="248" />
+  <circle class="tete" cx="62" cy="246" r="30" />
+  <circle class="articulation" cx="90" cy="248" r="10" />
+
+  <!-- Hanche : point d'ancrage identique dans les deux poses -->
+  <circle class="articulation" cx="240" cy="255" r="12" />
+
+  <!-- Pose basse : jambes fléchies, pieds proches du sol -->
+  <g class="pose-bas">
+    <line class="trait" x1="240" y1="255" x2="290" y2="300" />
+    <line class="trait" x1="290" y1="300" x2="260" y2="328" />
+    <circle class="articulation" cx="290" cy="300" r="11" />
+    <circle class="articulation" cx="260" cy="328" r="11" />
+  </g>
+
+  <!-- Pose haute : genoux ramenés vers la poitrine, bassin légèrement décollé -->
+  <g class="pose-haut">
+    <line class="trait" x1="240" y1="255" x2="205" y2="205" />
+    <line class="trait" x1="205" y1="205" x2="235" y2="175" />
+    <circle class="articulation" cx="205" cy="205" r="11" />
+    <circle class="articulation" cx="235" cy="175" r="11" />
+  </g>
+</svg>
