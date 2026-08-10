@@ -132,3 +132,17 @@
 .carte-jour.jour-repos .carte-jour-fleche {
   visibility: hidden;
 }
+.carte-jour-badge-repos {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--couleur-repos-accent);
+  letter-spacing: 0.03em;
+}
+
+.carte-jour.jour-repos {
+  opacity: 1;
+}
+
+.carte-jour.jour-repos .carte-jour-nom {
+  color: var(--couleur-texte-att);
+}
