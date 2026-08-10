@@ -1,0 +1,336 @@
+/* ============================================
+   HonoPs — Styles écran de séance
+   Distinction visuelle forte EXERCICE / REPOS
+   ============================================ */
+
+#corps-seance {
+  min-height: 100vh;
+  min-height: 100dvh;
+  transition: background-color var(--transition-etat);
+}
+
+#corps-seance[data-mode="repos"] {
+  background-color: var(--couleur-repos-fond);
+}
+
+#corps-seance[data-mode="exercice"] {
+  background-color: var(--couleur-actif-fond);
+}
+
+.bouton-home-seance {
+  position: fixed;
+  z-index: 5;
+  top: var(--espace-md);
+  left: var(--espace-md);
+  font-size: 1.3rem;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.ecran-seance {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.vue {
+  width: 100%;
+  max-width: 480px;
+  padding: var(--espace-xl) var(--espace-md) var(--espace-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* --- Barre de progression --- */
+
+.barre-progression {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: var(--espace-md);
+}
+
+.barre-progression-remplissage {
+  height: 100%;
+  background-color: var(--couleur-accent);
+  transition: width var(--transition-etat);
+}
+
+/* --- Entête compteurs --- */
+
+.entete-seance {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: var(--taille-texte-sm);
+  color: var(--couleur-texte-att);
+  font-weight: 700;
+  margin-bottom: var(--espace-sm);
+}
+
+#compteur-effectues {
+  color: var(--couleur-accent);
+}
+
+/* --- Nom de l'exercice --- */
+
+.nom-exercice {
+  font-family: var(--font-titres);
+  font-size: var(--taille-exercice-nom);
+  color: var(--couleur-texte);
+  margin-bottom: var(--espace-md);
+  line-height: 1.1;
+}
+
+/* --- Zone animation --- */
+
+.zone-animation {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--espace-md);
+  overflow: hidden;
+}
+
+.zone-animation img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.placeholder-animation {
+  font-size: 1.1rem;
+  color: var(--couleur-texte-att);
+  opacity: 0.6;
+}
+
+/* --- Valeur géante (reps ou temps) --- */
+
+.bloc-valeur {
+  width: 100%;
+  margin-bottom: var(--espace-md);
+}
+
+.valeur-geante {
+  font-family: var(--font-texte);
+  font-weight: 900;
+  font-size: var(--taille-chiffre-geant);
+  color: var(--couleur-accent);
+  line-height: 1;
+}
+
+.label-valeur {
+  margin-top: 0.25rem;
+  font-size: var(--taille-texte-sm);
+  color: var(--couleur-texte-att);
+  letter-spacing: 0.08em;
+}
+
+.bouton-termine {
+  margin-top: var(--espace-md);
+  width: 100%;
+  padding: 1.1rem;
+  font-size: 1.15rem;
+}
+
+/* --- Navigation flèches --- */
+
+.navigation-exercice {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: var(--espace-lg);
+}
+
+.bouton-fleche {
+  min-width: var(--taille-tactile-min);
+  min-height: var(--taille-tactile-min);
+  width: 64px;
+  height: 64px;
+  font-size: 1.6rem;
+  color: var(--couleur-texte);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+}
+
+.bouton-fleche:disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* --- Vue repos --- */
+
+.vue-repos {
+  justify-content: center;
+}
+
+.repos-titre {
+  font-size: var(--taille-titre);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--couleur-repos-accent);
+  margin-bottom: var(--espace-sm);
+}
+
+.repos-chrono {
+  font-family: var(--font-texte);
+  font-weight: 900;
+  font-size: var(--taille-chiffre-geant);
+  color: var(--couleur-texte);
+  margin-bottom: var(--espace-lg);
+}
+
+.repos-prochain {
+  padding: var(--espace-md);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  width: 100%;
+}
+
+.repos-prochain-label {
+  font-size: var(--taille-texte-sm);
+  color: var(--couleur-texte-att);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3rem;
+}
+
+.repos-prochain-nom {
+  font-family: var(--font-titres);
+  font-size: 1.6rem;
+  color: var(--couleur-texte);
+}
+
+/* --- Vue conflit (séance en cours) --- */
+
+.vue-conflit {
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.conflit-titre {
+  font-family: var(--font-titres);
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.conflit-detail {
+  color: var(--couleur-texte-att);
+  margin-bottom: var(--espace-lg);
+}
+
+.conflit-boutons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.bouton-danger {
+  min-height: var(--taille-tactile-min);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  border: 1px solid #e0857a;
+  color: #e0857a;
+  font-weight: 700;
+}
+
+/* --- Vue erreur --- */
+
+.vue-erreur {
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  gap: var(--espace-md);
+}
+
+.erreur-titre {
+  color: var(--couleur-texte-att);
+}
+
+/* --- Vue terminée --- */
+
+.vue-terminee {
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  gap: var(--espace-md);
+}
+
+.terminee-titre {
+  font-family: var(--font-titres);
+  font-size: 1.8rem;
+}
+
+.terminee-detail {
+  color: var(--couleur-texte-att);
+}
+
+/* --- Modale quitter (réutilise structure de jour.css) --- */
+
+.modale {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espace-md);
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.modale-contenu {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--espace-lg) var(--espace-md);
+  background-color: var(--couleur-fond-clair);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--ombre-md);
+  text-align: center;
+}
+
+.modale-titre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--couleur-texte);
+  margin-bottom: var(--espace-md);
+}
+
+.modale-boutons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bouton-modale {
+  min-height: var(--taille-tactile-min);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.bouton-modale-secondaire {
+  background-color: var(--couleur-repos-accent);
+  color: #0d1626;
+}
+
+.bouton-modale-danger {
+  background-color: transparent;
+  color: #e0857a;
+  border: 1px solid #e0857a;
+  }
