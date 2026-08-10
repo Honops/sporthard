@@ -1,0 +1,160 @@
+/* ============================================
+   HonoPs — Base CSS
+   Reset, variables, typographie, utilitaires
+   ============================================ */
+
+/* --- Polices ---
+   Calligraphique/élégante pour le logo, lisible pour le reste.
+   Chargées via @import ici pour rester en un seul fichier CSS de base
+   modifiable facilement depuis GitHub mobile. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@700&family=Inter:wght@400;600;700;900&display=swap');
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-texte);
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ============================================
+   Variables globales
+   ============================================ */
+:root {
+  /* --- Typographie --- */
+  --font-logo: 'Dancing Script', cursive;
+  --font-titres: 'Playfair Display', serif;
+  --font-texte: 'Inter', -apple-system, sans-serif;
+
+  /* --- Couleurs de base --- */
+  --couleur-fond: #0e0e10;
+  --couleur-fond-clair: #1a1a1d;
+  --couleur-texte: #f5f3ee;
+  --couleur-texte-att: #a8a6a1;
+  --couleur-accent: #d4a24c;
+
+  /* --- États séance : distinction forte exercice / repos --- */
+  --couleur-actif-fond: #0e0e10;
+  --couleur-actif-accent: #d4a24c;
+
+  --couleur-repos-fond: #131b2e;
+  --couleur-repos-accent: #4c8cd4;
+
+  /* --- Espacements --- */
+  --espace-xs: 0.5rem;
+  --espace-sm: 1rem;
+  --espace-md: 1.5rem;
+  --espace-lg: 2.5rem;
+  --espace-xl: 4rem;
+
+  /* --- Tailles de police --- */
+  --taille-logo: clamp(3.5rem, 15vw, 7rem);
+  --taille-titre: clamp(1.8rem, 6vw, 2.8rem);
+  --taille-exercice-nom: clamp(2rem, 9vw, 3.5rem);
+  --taille-chiffre-geant: clamp(4rem, 22vw, 8rem);
+  --taille-texte: 1rem;
+  --taille-texte-sm: 0.875rem;
+
+  /* --- Zones tactiles (accessibilité doigt) --- */
+  --taille-tactile-min: 48px;
+
+  /* --- Rayons / ombres --- */
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --ombre-md: 0 4px 20px rgba(0, 0, 0, 0.35);
+
+  /* --- Transitions --- */
+  --transition-rapide: 0.2s ease;
+  --transition-etat: 0.4s ease;
+}
+
+/* ============================================
+   Utilitaires réutilisables
+   ============================================ */
+
+.bouton-tactile {
+  min-width: var(--taille-tactile-min);
+  min-height: var(--taille-tactile-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-rapide), opacity var(--transition-rapide);
+}
+
+.bouton-tactile:active {
+  transform: scale(0.94);
+  opacity: 0.85;
+}
+
+.masque {
+  display: none !important;
+}
+
+.visible-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.overlay-sombre {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+
+.conteneur-centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  text-align: center;
+  padding: var(--espace-md);
+}
