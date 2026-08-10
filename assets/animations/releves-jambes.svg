@@ -1,0 +1,47 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation relevés de jambes">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    .pose-bas { animation: fondu-bas 1.9s ease-in-out infinite; }
+    .pose-haut { animation: fondu-haut 1.9s ease-in-out infinite; }
+
+    @keyframes fondu-bas {
+      0%, 30%   { opacity: 1; }
+      50%, 80%  { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+    @keyframes fondu-haut {
+      0%, 30%   { opacity: 0; }
+      50%, 80%  { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <!-- Buste, tête, bras : fixes, allongé au sol -->
+  <line class="trait" x1="235" y1="320" x2="90" y2="318" />
+  <circle class="tete" cx="62" cy="316" r="30" />
+
+  <!-- Hanche : point d'ancrage identique dans les deux poses -->
+  <circle class="articulation" cx="235" cy="320" r="12" />
+
+  <!-- Pose basse : jambes tendues, posées au sol -->
+  <g class="pose-bas">
+    <line class="trait" x1="235" y1="320" x2="300" y2="323" />
+    <line class="trait" x1="300" y1="323" x2="360" y2="325" />
+    <circle class="articulation" cx="300" cy="323" r="11" />
+    <circle class="articulation" cx="360" cy="325" r="11" />
+  </g>
+
+  <!-- Pose haute : jambes tendues, levées à la verticale -->
+  <g class="pose-haut">
+    <line class="trait" x1="235" y1="320" x2="242" y2="210" />
+    <line class="trait" x1="242" y1="210" x2="248" y2="95" />
+    <circle class="articulation" cx="242" cy="210" r="11" />
+    <circle class="articulation" cx="248" cy="95" r="11" />
+  </g>
+</svg>
