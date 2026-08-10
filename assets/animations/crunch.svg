@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation crunch">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    .pose-bas { animation: fondu-bas 1.6s ease-in-out infinite; }
+    .pose-haut { animation: fondu-haut 1.6s ease-in-out infinite; }
+
+    @keyframes fondu-bas {
+      0%, 30%   { opacity: 1; }
+      50%, 80%  { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+    @keyframes fondu-haut {
+      0%, 30%   { opacity: 0; }
+      50%, 80%  { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <!-- Jambes et hanche : fixes, ne bougent pas pendant le crunch -->
+  <line class="trait" x1="170" y1="320" x2="250" y2="260" />
+  <line class="trait" x1="250" y1="260" x2="250" y2="330" />
+  <circle class="articulation" cx="170" cy="320" r="12" />
+  <circle class="articulation" cx="250" cy="260" r="11" />
+  <circle class="articulation" cx="250" cy="330" r="12" />
+
+  <!-- Pose basse : allongé -->
+  <g class="pose-bas">
+    <line class="trait" x1="170" y1="320" x2="88" y2="313" />
+    <circle class="tete" cx="60" cy="311" r="30" />
+  </g>
+
+  <!-- Pose haute : buste enroulé -->
+  <g class="pose-haut">
+    <line class="trait" x1="170" y1="320" x2="140" y2="228" />
+    <circle class="tete" cx="115" cy="195" r="30" />
+  </g>
+</svg>
