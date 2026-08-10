@@ -1,0 +1,134 @@
+/* ============================================
+   HonoPs — Styles page des jours
+   ============================================ */
+
+.page-jours {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--espace-md);
+  padding-bottom: var(--espace-xl);
+}
+
+.entete-jours {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--espace-md);
+}
+
+.bouton-home {
+  font-size: 1.4rem;
+  background-color: var(--couleur-fond-clair);
+  border-radius: 999px;
+}
+
+.compteur-seances {
+  font-size: var(--taille-texte-sm);
+  color: var(--couleur-texte-att);
+  font-weight: 600;
+}
+
+.compteur-seances span {
+  color: var(--couleur-accent);
+  font-weight: 700;
+}
+
+/* --- Bandeau de reprise --- */
+
+.bandeau-reprise {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: var(--espace-sm) var(--espace-md);
+  margin-bottom: var(--espace-md);
+  background-color: var(--couleur-repos-fond);
+  border: 1px solid var(--couleur-repos-accent);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-rapide);
+}
+
+.bandeau-reprise:active {
+  transform: scale(0.98);
+}
+
+.bandeau-reprise-titre {
+  font-size: var(--taille-texte-sm);
+  font-weight: 700;
+  color: var(--couleur-repos-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.bandeau-reprise-detail {
+  font-size: var(--taille-texte-sm);
+  color: var(--couleur-texte-att);
+}
+
+.bandeau-reprise-action {
+  margin-top: 0.35rem;
+  font-weight: 700;
+  color: var(--couleur-texte);
+}
+
+/* --- Titre --- */
+
+.titre-jours {
+  font-family: var(--font-titres);
+  font-size: var(--taille-titre);
+  color: var(--couleur-texte);
+  margin-bottom: var(--espace-md);
+}
+
+/* --- Liste des jours --- */
+
+.liste-jours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.carte-jour {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: var(--espace-sm) var(--espace-md);
+  background-color: var(--couleur-fond-clair);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-rapide), background-color var(--transition-rapide);
+}
+
+.carte-jour:active {
+  transform: scale(0.97);
+}
+
+.carte-jour-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.carte-jour-nom {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--couleur-texte);
+}
+
+.carte-jour-seance {
+  font-size: var(--taille-texte-sm);
+  color: var(--couleur-texte-att);
+}
+
+.carte-jour-fleche {
+  font-size: 1.3rem;
+  color: var(--couleur-accent);
+}
+
+.carte-jour.jour-repos {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.carte-jour.jour-repos .carte-jour-fleche {
+  visibility: hidden;
+}
