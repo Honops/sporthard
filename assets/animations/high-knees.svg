@@ -1,0 +1,68 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animation high knees">
+  <style>
+    .trait { stroke: #d4a24c; stroke-width: 20; stroke-linecap: round; fill: none; }
+    .articulation { fill: #f5f3ee; }
+    .tete { fill: #f5f3ee; stroke: #d4a24c; stroke-width: 6; }
+    .sol { stroke: rgba(245,243,238,0.18); stroke-width: 4; stroke-dasharray: 10 10; }
+
+    .pose-a { animation: fondu-a 1s ease-in-out infinite; }
+    .pose-b { animation: fondu-b 1s ease-in-out infinite; }
+
+    @keyframes fondu-a {
+      0%, 25%   { opacity: 1; }
+      50%, 75%  { opacity: 0; }
+      100%      { opacity: 1; }
+    }
+    @keyframes fondu-b {
+      0%, 25%   { opacity: 0; }
+      50%, 75%  { opacity: 1; }
+      100%      { opacity: 0; }
+    }
+  </style>
+
+  <line class="sol" x1="30" y1="330" x2="370" y2="330" />
+
+  <!-- Buste et tête : légèrement fixes, verticaux -->
+  <circle class="tete" cx="195" cy="105" r="30" />
+  <circle class="articulation" cx="200" cy="200" r="11" />
+  <line class="trait" x1="197" y1="132" x2="200" y2="200" />
+
+  <!-- Pose A : jambe droite en appui, genou gauche relevé haut, bras opposés -->
+  <g class="pose-a">
+    <!-- jambe d'appui (droite) -->
+    <line class="trait" x1="200" y1="200" x2="225" y2="265" />
+    <line class="trait" x1="225" y1="265" x2="220" y2="330" />
+    <circle class="articulation" cx="225" cy="265" r="10" />
+    <circle class="articulation" cx="220" cy="330" r="12" />
+
+    <!-- genou gauche relevé -->
+    <line class="trait" x1="200" y1="200" x2="150" y2="180" />
+    <line class="trait" x1="150" y1="180" x2="175" y2="240" />
+    <circle class="articulation" cx="150" cy="180" r="10" />
+    <circle class="articulation" cx="175" cy="240" r="10" />
+
+    <!-- bras opposés : gauche en avant, droit en arrière -->
+    <line class="trait" x1="200" y1="150" x2="150" y2="120" />
+    <line class="trait" x1="200" y1="150" x2="250" y2="185" />
+    <circle class="articulation" cx="150" cy="120" r="9" />
+    <circle class="articulation" cx="250" cy="185" r="9" />
+  </g>
+
+  <!-- Pose B : miroir — jambe gauche en appui, genou droit relevé -->
+  <g class="pose-b">
+    <line class="trait" x1="200" y1="200" x2="175" y2="265" />
+    <line class="trait" x1="175" y1="265" x2="180" y2="330" />
+    <circle class="articulation" cx="175" cy="265" r="10" />
+    <circle class="articulation" cx="180" cy="330" r="12" />
+
+    <line class="trait" x1="200" y1="200" x2="250" y2="180" />
+    <line class="trait" x1="250" y1="180" x2="225" y2="240" />
+    <circle class="articulation" cx="250" cy="180" r="10" />
+    <circle class="articulation" cx="225" cy="240" r="10" />
+
+    <line class="trait" x1="200" y1="150" x2="250" y2="120" />
+    <line class="trait" x1="200" y1="150" x2="150" y2="185" />
+    <circle class="articulation" cx="250" cy="120" r="9" />
+    <circle class="articulation" cx="150" cy="185" r="9" />
+  </g>
+</svg>
