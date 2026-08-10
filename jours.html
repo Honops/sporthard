@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>HonoPs — Mon programme</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/jours.css">
+</head>
+<body>
+  <div class="page-jours">
+    <header class="entete-jours">
+      <a href="index.html" class="bouton-tactile bouton-home" aria-label="Retour à l'accueil">🏠</a>
+      <p class="compteur-seances">
+        Séances effectuées : <span id="nombre-seances">0</span>
+      </p>
+    </header>
+
+    <a
+      id="bandeau-reprise"
+      class="bandeau-reprise masque"
+      href="#"
+    >
+      <span class="bandeau-reprise-titre">Séance en cours</span>
+      <span class="bandeau-reprise-detail" id="bandeau-reprise-detail"></span>
+      <span class="bandeau-reprise-action">▶ Reprendre</span>
+    </a>
+
+    <h1 class="titre-jours">Mon programme</h1>
+
+    <ul class="liste-jours" id="liste-jours">
+      <!-- Les 7 cartes de jours sont générées dynamiquement -->
+    </ul>
+  </div>
+
+  <script type="module" src="js/pages/jours.js"></script>
+</body>
+</html>
