@@ -52,9 +52,9 @@ export const SEANCES = {
 export const PROGRAMME_SEMAINE = {
   lundi: "A",
   mardi: "B",
-  mercredi: "C",
-  jeudi: "A",
-  vendredi: "B",
+  mercredi: "A",
+  jeudi: "B",
+  vendredi: "A",
   samedi: "C",
   dimanche: null
 };
