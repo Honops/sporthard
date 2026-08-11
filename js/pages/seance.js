@@ -223,11 +223,35 @@ boutonTermine.addEventListener("click", () => machine.validerExerciceActuel());
 
 /* ---------- Déblocage audio dès le premier geste ---------- */
 
-document.addEventListener(
-  "pointerdown",
-  () => sound.debloquerAudio(),
-  { once: true }
-);
+let audioDebloque = false;
+let sonDebutEnAttente = false;
+
+/**
+ * Demande la lecture du son de début de séance : immédiate si l'audio
+ * est déjà débloqué, sinon mise en attente jusqu'au premier geste réel.
+ */
+function demanderSonDebut() {
+  if (audioDebloque) {
+    sound.jouerDebutSeance();
+  } else {
+    sonDebutEnAttente = true;
+  }
+}
+
+function gererPremierGeste() {
+  if (audioDebloque) return;
+  audioDebloque = true;
+  sound.debloquerAudio();
+
+  if (sonDebutEnAttente) {
+    sonDebutEnAttente = false;
+    sound.jouerDebutSeance();
+  }
+
+  document.removeEventListener("pointerdown", gererPremierGeste);
+}
+
+document.addEventListener("pointerdown", gererPremierGeste);
 
 /* ---------- Initialisation ---------- */
 
@@ -250,15 +274,21 @@ function initialiser() {
     afficherVueConflit(sauvegarde);
 
     boutonConflitReprendre.addEventListener("click", () => {
+      audioDebloque = true;
+      document.removeEventListener("pointerdown", gererPremierGeste);
       sound.debloquerAudio();
       machine.reprendreSeanceSauvegardee();
     });
 
     boutonConflitAbandonner.addEventListener("click", () => {
+      audioDebloque = true;
+      document.removeEventListener("pointerdown", gererPremierGeste);
       sound.debloquerAudio();
       machine.abandonnerSeanceSauvegardee();
 
       if (jourEstValide(jourDemande)) {
+        // Ce clic est lui-même un geste utilisateur réel sur cette page :
+        // le son peut être joué immédiatement, sans attendre un pointerdown.
         sound.jouerDebutSeance();
         machine.demarrerNouvelleSeance(jourDemande);
       } else {
@@ -275,7 +305,11 @@ function initialiser() {
     return;
   }
 
-  sound.jouerDebutSeance();
+  // Le son de début n'est PAS joué ici : le clic sur COMMENCER a eu lieu
+  // sur jour.html, ce qui ne garantit pas le déblocage audio de ce
+  // nouveau document. L'état démarre normalement ; le son attend le
+  // premier vrai geste sur seance.html (voir gererPremierGeste).
+  demanderSonDebut();
   machine.demarrerNouvelleSeance(jourDemande);
 }
 
