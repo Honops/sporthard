@@ -394,3 +394,26 @@ export function obtenirEtatPourAffichage() {
       etatActuel.exercicesValides[etatActuel.exerciceIndex] === true
   };
   }
+/**
+ * Réinitialise le timer de l'exercice chronométré actuellement en cours,
+ * en repartant de sa durée complète. N'affecte ni exercicesValides,
+ * ni exerciceIndex, ni le statut, ni le repos, ni le compteur d'exercices
+ * effectués. Ne joue aucun son (la state machine ignore l'audio de toute
+ * façon). Sans effet si l'exercice courant n'est pas de type "temps" ou
+ * si aucune séance n'est en cours.
+ */
+export function reinitialiserExerciceActuel() {
+  if (!etatActuel || etatActuel.statut !== STATUTS.EXERCICE_ACTIF) return;
+
+  const exerciceCourant = trouverExercice(etatActuel.exercicesIds[etatActuel.exerciceIndex]);
+  if (!exerciceCourant || exerciceCourant.type !== "temps") return;
+
+  etatActuel = {
+    ...etatActuel,
+    phaseEndTimestamp: Date.now() + exerciceCourant.valeur * 1000
+  };
+
+  storage.sauvegarderSeance(etatActuel);
+  demarrerMinuteurPourEtatActuel();
+  notifier();
+}
