@@ -158,6 +158,7 @@
 .bouton-termine:active {
   transform: scale(0.97);
 }
+
 .bouton-reset-timer {
   margin-top: var(--espace-sm);
   min-width: var(--taille-tactile-min);
@@ -175,6 +176,7 @@
   transform: scale(0.95);
   background-color: rgba(255, 255, 255, 0.12);
 }
+
 /* --- Navigation flèches --- */
 
 .navigation-exercice {
@@ -363,4 +365,4 @@
   background-color: transparent;
   color: #e0857a;
   border: 1px solid #e0857a;
-  }
+}
