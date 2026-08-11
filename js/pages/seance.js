@@ -126,7 +126,10 @@ function afficherVueRepos(etat) {
     ? etat.exerciceSuivant.nom.toUpperCase()
     : "";
 
-  flechePrecedentRepos.disabled = etat.exerciceIndex === 0;
+  // Pendant le repos, ◀ rouvre toujours l'exercice qui vient de se
+  // terminer (voir exercicePrecedent) — jamais désactivé, quel que
+  // soit l'index, y compris pour le repos du tout premier exercice.
+  flechePrecedentRepos.disabled = false;
   flecheSuivantRepos.disabled = false;
 }
 
