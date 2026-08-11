@@ -33,6 +33,20 @@ const boutonTermine = document.getElementById("bouton-termine");
 const blocTemps = document.getElementById("bloc-temps");
 const valeurTemps = document.getElementById("valeur-temps");
 
+/* ---------- Bouton RESET (créé dynamiquement, exercices chronométrés uniquement) ---------- */
+
+const boutonReset = document.createElement("button");
+boutonReset.id = "bouton-reset-timer";
+boutonReset.className = "bouton-reset-timer";
+boutonReset.type = "button";
+boutonReset.textContent = "🔄 Reset";
+boutonReset.setAttribute("aria-label", "Recommencer le chronomètre de cet exercice");
+blocTemps.appendChild(boutonReset);
+
+boutonReset.addEventListener("click", () => {
+  machine.reinitialiserExerciceActuel();
+});
+
 const flechePrecedent = document.getElementById("fleche-precedent");
 const flecheSuivant = document.getElementById("fleche-suivant");
 
@@ -190,22 +204,6 @@ function surChangementEtat(etat) {
       break;
   }
 }
-/* ---------- Bouton RESET (créé dynamiquement, exercices chronométrés uniquement) ---------- */
-
-const boutonReset = document.createElement("button");
-boutonReset.id = "bouton-reset-timer";
-boutonReset.className = "bouton-reset-timer";
-boutonReset.type = "button";
-boutonReset.textContent = "🔄 Reset";
-boutonReset.setAttribute("aria-label", "Recommencer le chronomètre de cet exercice");
-blocTemps.appendChild(boutonReset);
-
-boutonReset.addEventListener("click", () => {
-  machine.reinitialiserExerciceActuel();
-});
-
-const flechePrecedent = document.getElementById("fleche-precedent");
-const flecheSuivant = document.getElementById("fleche-suivant");
 
 /* ---------- Bouton home + modale de confirmation ---------- */
 
