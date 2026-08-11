@@ -141,8 +141,22 @@
 .bouton-termine {
   margin-top: var(--espace-md);
   width: 100%;
-  padding: 1.1rem;
-  font-size: 1.15rem;
+  padding: 1.2rem;
+  min-height: 60px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, #e0b45f, #c98f30);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 6px 24px rgba(201, 143, 48, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.bouton-termine:active {
+  transform: scale(0.97);
 }
 
 /* --- Navigation flèches --- */
