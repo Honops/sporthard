@@ -307,10 +307,20 @@ export function exerciceSuivant() {
 
 /**
  * Navigation manuelle vers l'exercice précédent (flèche ◀).
- * Ne retire jamais la validation d'un exercice déjà validé.
+ * Pendant le repos, le repos appartient encore à l'exercice qui vient
+ * de se terminer : revenir doit donc rouvrir CET exercice (sans
+ * décrémenter l'index), et non l'exercice d'avant.
+ * Pendant un exercice actif, revenir cible normalement l'exercice
+ * précédent. Ne retire jamais la validation d'un exercice déjà validé.
  */
 export function exercicePrecedent() {
   if (!etatActuel) return;
+
+  if (etatActuel.statut === STATUTS.REPOS) {
+    allerVersExercice(etatActuel.exerciceIndex);
+    return;
+  }
+
   const indexCible = etatActuel.exerciceIndex - 1;
   if (indexCible < 0) return;
   allerVersExercice(indexCible);
